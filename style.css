@@ -103,3 +103,33 @@ footer {
   color: #666;
 }
 
+/* 1) Hacer imágenes y logo fluidos */
+.producto img,
+.logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* Logo con tamaño fijo en pantalla grande */
+.logo {
+  width: 60px;   /* ancho fijo */
+  height: auto;  /* mantiene proporción */
+  display: block;
+}
+
+.producto .video-producto {
+  width: 80%;            /* Ahora ocupa el 80% del ancho de la tarjeta */
+  max-width: 300px;      /* Como mucho 300px de ancho */
+  height: auto;          /* Mantiene la proporción original */
+  display: block;        /* Sigue evitándose espacios extra */
+  margin: 12px auto 0;   /* 12px arriba, auto izquierda/derecha (centra), 0 abajo */
+  border-radius: 8px;    /* Bordes redondeados como antes */
+}
+/* Reducir tamaño de la imagen principal */
+.producto img {
+  width: 80%;           /* ahora ocupa solo el 80% de la tarjeta */
+  max-width: 300px;     /* como mucho 300px */
+  height: auto;         /* mantiene proporción */
+  display: block;       /* quita espacios en línea */
+  margin: 0 auto 12px;  /* centrar y añadir espacio abajo */
+}
