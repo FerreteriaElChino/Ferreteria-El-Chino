@@ -118,7 +118,7 @@ footer {
 }
 
 .producto .video-producto {
-  width: 80%;            /* Ahora ocupa el 80% del ancho de la tarjeta */
+  width: 50%;            /* Ahora ocupa el 80% del ancho de la tarjeta */
   max-width: 300px;      /* Como mucho 300px de ancho */
   height: auto;          /* Mantiene la proporción original */
   display: block;        /* Sigue evitándose espacios extra */
@@ -127,7 +127,7 @@ footer {
 }
 /* Reducir tamaño de la imagen principal */
 .producto img {
-  width: 80%;           /* ahora ocupa solo el 80% de la tarjeta */
+  width: 50%;           /* ahora ocupa solo el 80% de la tarjeta */
   max-width: 300px;     /* como mucho 300px */
   height: auto;         /* mantiene proporción */
   display: block;       /* quita espacios en línea */
