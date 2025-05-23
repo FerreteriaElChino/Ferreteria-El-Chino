@@ -1,60 +1,43 @@
-/* ----------------------
-   Estilos para el header
------------------------ */
-
-header {
-  display: flex;             /* Coloca elementos en fila */
-  align-items: center;       /* Centra verticalmente logo y texto */
-  gap: 450px;                 /* Espacio entre logo, título y subtítulo */
-  padding: 40px 20px;        /* Conservamos tu padding original */
-  background: linear-gradient(90deg, #ff8c00, #ffc371);
-  color: #fff;
-}
-
-/* Ajustes para el logotipo */
-.logo {
-  width: 150px;               /* Ajusta el tamaño: prueba 60px de ancho */
-  height: auto;              /* Mantiene la proporción */
-  display: block;
-}
-
-/* Ajuste opcional del h1 si hace falta */
-header h1 {
-  font-size: 2.5rem;         /* Mantenemos el tamaño que tenías */
-  margin: 0;                 /* Eliminamos márgenes extra */
-}
-
-/* Reset básico */
+/* 1. Reset global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Tipografía y fondo */
+/* 2. Tipografía y fondo */
 body {
   font-family: 'Roboto', sans-serif;
   background: #f2f2f2;
   color: #333;
 }
 
-/* Encabezado */
+/* 3. Header y logo */
 header {
+  display: flex;
+  align-items: center;
+  gap: 16px;  /* espacio normal entre logo y texto */
+  padding: 40px 20px;
   background: linear-gradient(90deg, #ff8c00, #ffc371);
   color: #fff;
-  text-align: center;
-  padding: 40px 20px;
 }
+
+.logo {
+  width: 60px;    /* tamaño fijo en escritorio */
+  height: auto;
+  display: block;
+}
+
 header h1 {
   font-size: 2.5rem;
 }
+
 header .subtitulo {
-  margin-top: 8px;
   font-size: 1.1rem;
   opacity: 0.9;
 }
 
-/* Grid de productos */
+/* 4. Grid de productos */
 .grid-productos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -62,29 +45,41 @@ header .subtitulo {
   padding: 40px 20px;
 }
 
-/* Tarjeta de producto */
+/* 5. Tarjeta de producto */
 .producto {
   background: #fff;
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .producto:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
+
+/* 6. Imagen de producto */
 .producto img {
-  width: 100%;
+  width: 80%;           /* ocupa el 80% de la tarjeta */
+  max-width: 300px;     /* como mucho 300px */
   height: auto;
   display: block;
+  margin: 0 auto 12px;  /* centrada y separada del título */
 }
-.producto h2 {
-  margin: 16px 0 8px;
-  font-size: 1.2rem;
-  color: #333;
+
+/* 7. Vídeo de producto */
+.producto .video-producto {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 8px;
 }
+
+/* 8. Precio */
 .precio {
   display: inline-block;
   background: #ff8c00;
@@ -95,7 +90,7 @@ header .subtitulo {
   margin-bottom: 16px;
 }
 
-/* Pie de página */
+/* 9. Pie de página */
 footer {
   text-align: center;
   padding: 20px;
@@ -103,33 +98,27 @@ footer {
   color: #666;
 }
 
-/* 1) Hacer imágenes y logo fluidos */
-.producto img,
-.logo {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-/* Logo con tamaño fijo en pantalla grande */
-.logo {
-  width: 60px;   /* ancho fijo */
-  height: auto;  /* mantiene proporción */
-  display: block;
-}
-
-.producto .video-producto {
-  width: 50%;            /* Ahora ocupa el 80% del ancho de la tarjeta */
-  max-width: 300px;      /* Como mucho 300px de ancho */
-  height: auto;          /* Mantiene la proporción original */
-  display: block;        /* Sigue evitándose espacios extra */
-  margin: 12px auto 0;   /* 12px arriba, auto izquierda/derecha (centra), 0 abajo */
-  border-radius: 8px;    /* Bordes redondeados como antes */
-}
-/* Reducir tamaño de la imagen principal */
-.producto img {
-  width: 50%;           /* ahora ocupa solo el 80% de la tarjeta */
-  max-width: 300px;     /* como mucho 300px */
-  height: auto;         /* mantiene proporción */
-  display: block;       /* quita espacios en línea */
-  margin: 0 auto 12px;  /* centrar y añadir espacio abajo */
+/* 10. Responsive: móviles (<=600px) */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    padding: 20px;
+  }
+  .grid-productos {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+  header h1 { font-size: 1.8rem; }
+  header .subtitulo { font-size: 1rem; }
+  .producto h2 { font-size: 1rem; }
+  
+  /* En móviles, imágenes y vídeos ocupan todo el ancho */
+  .producto img,
+  .producto .video-producto {
+    width: 100%;
+    max-width: none;
+  }
 }
